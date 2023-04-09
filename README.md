@@ -13,4 +13,8 @@ getAllFiles('path', false, '.js', (file) => {
     console.log(file)
 })
 console.log(getAllFilesSync('path', false, '.js'));
+getAllFiles('path', true, null, (file) => {
+    console.log(file)
+})
+console.log(getAllFilesSync('path', true));
 ```
