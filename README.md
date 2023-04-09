@@ -7,7 +7,7 @@ npm i aio-get-all-files
 
 ## Test code:
 ```js
-const { getAllFiles, getAllFilesSync } = require('./index')
+const { getAllFiles, getAllFilesSync } = require('aio-get-all-files')
 
 getAllFiles('path', false, '.js', (file) => {
     console.log(file)
