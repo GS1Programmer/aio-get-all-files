@@ -65,3 +65,8 @@ What's new?
 What's new?
 #
 * Fixing error
+
+### 0.0.72 :
+What's new?
+#
+* Uptade advencedGetAllFiles()
