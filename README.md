@@ -55,8 +55,13 @@ console.log(getAllFilesSync('path', true));
 #
 
 ## ChangLog:
-0.0.7-enhanced :
+### 0.0.7-enhanced :
 What's new?
 #
 * Adding advencedGetAllFiles()
 * Bugs fixed
+
+### 0.0.71 :
+What's new?
+#
+* Fixing error
