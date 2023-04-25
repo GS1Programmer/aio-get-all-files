@@ -70,3 +70,15 @@ What's new?
 What's new?
 #
 * Uptade advencedGetAllFiles()
+
+### 0.0.73 :
+What's new?
+#
+* Deleted advencedGetAllFiles()
+* adding advencedGetAllFilesSync()
+* adding advencedGetAllFiles()
+* adding advencedGetAllFilesSync()
+* adding getAllFilesWithoutType()
+* adding getAllFilesWithoutTypeSync()
+* adding getFilesWithoutType()
+* adding getFilesWithoutTypeSync()
