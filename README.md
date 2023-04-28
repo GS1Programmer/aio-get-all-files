@@ -74,7 +74,7 @@ What's new?
 * adding getFilesWithoutTypeSync()
 
 ### 0.0.76 :
-What's neww?
+What's new?
 #
 * Uptading advencedGetAllFiles()
 * Delete advencedGetAllFilesSync()
