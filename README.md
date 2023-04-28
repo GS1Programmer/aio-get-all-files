@@ -31,7 +31,17 @@ console.log(getAllFilesSync('path', true));
 ```
 
 ## Code:
+### advencedGetAllFiles()
+Sample Code :
+```javascript
+const { advencedGetAllFiles, fileTypes} = require('aio-get-all-files')
 
+advencedGetAllFiles("path", {
+    ext: ".EXTENSION", // Note: Always start with point (.)
+    allFiles: true,
+    type: fileTypes // Something like allTypes, foldersOnly, & fileOnly
+}, /*you can field it as Function or Boolean*/)
+```
 #
 
 ## ChangLog:
@@ -62,3 +72,9 @@ What's new?
 * adding getAllFilesWithoutTypeSync()
 * adding getFilesWithoutType()
 * adding getFilesWithoutTypeSync()
+
+### 0.0.76 :
+What's neww?
+#
+* Uptading advencedGetAllFiles()
+* Delete advencedGetAllFilesSync()
