@@ -1,4 +1,17 @@
-# aio-get-all-files
+# **AIO-Get-All-Files**
+
+## Information
+#### ***AIO (or All In One) Get All Files***
+
+
+**AIO Get All Files** its a simple get all files module to get all files path. This package its usefull for build some discord bot, and the others.
+
+This module allow you to get files with a lot method, and make you easier to get all files without making new file to get files.
+
+And thanks to choosing aio-get-all-files for your get all files node.js module.
+
+**This Module Inspired By: <a href="https://github.com/notunderctrl">NotUnderCtrl</a>**
+#
 ## Instalation:
 With [npm](www.npmjs.com) :
 ```sh 
@@ -7,74 +20,54 @@ npm i aio-get-all-files
 #
 ## Test code:
 ```js
-const { getAllFiles, getAllFilesSync, getFiles, getFilesSync, } = require('aio-get-all-files')
+const aio = require("aio-get-all-files");
 
-// to get Files and subFiles
-getAllFiles('path', false, 'extesion', (file) => {
-    console.log(file)
-})
-console.log(getAllFilesSync('path', false, 'extesion'));
-getFiles('path', false, '.js', (file) => {
-    console.log(file)
-})
-console.log(getAllFilesSync('path', false, 'extesion'));
+// To get all files fast from folder you can do this
+const files = aio.getAllFilesSync("FOLDER_PATH", false, ".FILE_EXTENSION");
 
-// to get Folders and subFolders
-getAllFiles('path', true, null, (file) => {
-    console.log(file)
-})
-console.log(getAllFilesSync('path', true));
-getFiles('path', true, null, (file) => {
-    console.log(file)
-})
-console.log(getAllFilesSync('path', true));
+// To get all folders fast from a folders you can do this
+const folders = aio.getAllFilesSync("FOLDER_PATH", true);
 ```
 
-## Code:
-### advencedGetAllFiles()
-Sample Code :
-```javascript
-const { advencedGetAllFiles, fileTypes} = require('aio-get-all-files')
+>Note: For the complete code you can go to oficial <a href="https://youtube.com/@mrgaming_0001">channel</a>
 
-advencedGetAllFiles("path", {
-    ext: ".EXTENSION", // Note: Always start with point (.)
-    allFiles: true,
-    type: fileTypes // Something like allTypes, foldersOnly, & fileOnly
-}, /*you can field it as Function or Boolean*/)
+When you run the code from this sample code the logs its like here:
+```sh
+[
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\file\\aio\\aio.js',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\file\\aio\\aio2\\aio22.js',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\file\\is.js',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\file\\oia\\oia.js'
+]
+[
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\file',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\file\\aio',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\file\\aio\\aio2',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\file\\oia',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\folder',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\folder\\1',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\folder\\1\\3',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\folder\\2',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\folder\\2\\4',
+  'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\folder\\2\\4\\5'
+]
 ```
-#
 
-## ChangLog:
-### 0.0.7-enhanced :
-What's new?
 #
-* Adding advencedGetAllFiles()
-* Bugs fixed
+### NEW UPTADE (0.1.0)
+We have new method called `getAllFilesInstant` and `getDataFile`, For the code heres is sample:
 
-### 0.0.71 :
-What's new?
-#
-* Fixing error
+```js
+const aio = require("aio-get-all-files");
 
-### 0.0.72 :
-What's new?
-#
-* Uptade advencedGetAllFiles()
+(async () => {
+    const data = await aio.getAllFilesInstant("PATH", {
+        ext: ".FILE_EXTENSION",
+        sync: true, // You can not set it or set it as function, example: `(file) => console.log('file')`
+        allFiles: true, // For get all files like `getAllFilesSync`
+        fileType: "foldersOnly" // Filter of the object (file/folder) you get.
+    }); // return `Promise<Array<String>>|null`
 
-### 0.0.73 :
-What's new?
-#
-* Deleted advencedGetAllFiles()
-* adding advencedGetAllFilesSync()
-* adding advencedGetAllFiles()
-* adding advencedGetAllFilesSync()
-* adding getAllFilesWithoutType()
-* adding getAllFilesWithoutTypeSync()
-* adding getFilesWithoutType()
-* adding getFilesWithoutTypeSync()
-
-### 0.0.76 :
-What's new?
-#
-* Uptading advencedGetAllFiles()
-* Delete advencedGetAllFilesSync()
+    console.log(await aio.getDataFile(data[0])); // `data[0]` is a String, also you can change it to Path or String
+})();
+```
