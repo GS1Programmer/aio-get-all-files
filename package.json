@@ -1,9 +1,9 @@
 {
   "name": "aio-get-all-files",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "scripts": {
-    "test": "node ."
+    "test": "node test/test.js"
   },
   "repository": {
     "type": "git",

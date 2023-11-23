@@ -18,20 +18,51 @@ With [npm](www.npmjs.com) :
 npm i aio-get-all-files
 ```
 #
-## Test code:
+## Code:
 ```js
 const aio = require("aio-get-all-files");
 
-// To get all files fast from folder you can do this
-const files = aio.getAllFilesSync("FOLDER_PATH", false, ".FILE_EXTENSION");
-
-// To get all folders fast from a folders you can do this
-const folders = aio.getAllFilesSync("FOLDER_PATH", true);
+/**
+  For method like `getAllFiles`, `getFiles`, `getAllFilesWithoutType`, & `instant`
+ */
+aio.<METHODS>("PATH", options);
 ```
+## Methods:
+### `getAllFiles`:
+Returns an array of all files and directories in a given directory.
+
+```js
+aio.getAllFiles("PATH", {
+    ext, // The file extension to filter by
+    sync, // The return of output, like `true` as Array<String> and `false` as Promise<Array<String>>
+    foldersOnly // Whether to include only directories or not
+});
+```
+### `getFiles`:
+Returns an array of files in a given directory
+
+```js
+aio.getFiles("PATH", {
+    ext, // The file extension to filter by
+    sync, // The return of output, like `true` as Array<String> and `false` as Promise<Array<String>>
+    foldersOnly // Whether to include only directories or not
+});
+```
+
+### `getAllFilesWithoutType`:
+Returns an array of all files and directories in a given directory without type information.
+
+```js
+aio.getAllFilesWithoutType("PATH", {
+    ext, // The file extension to filter by
+    sync, // The return of output, like `true` as Array<String> and `false` as Promise<Array<String>>
+});
+```
+#
 
 >Note: For the complete code you can go to oficial <a href="https://youtube.com/@mrgaming_0001">channel</a>
 
-When you run the code from this sample code the logs its like here:
+When you run the code from the sample code the logs its like here:
 ```sh
 [
   'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\file\\aio\\aio.js',
@@ -51,23 +82,4 @@ When you run the code from this sample code the logs its like here:
   'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\folder\\2\\4',
   'D:\\NodeTest Folder\\0Test package\\getAllFiles\\testfolder\\folder\\2\\4\\5'
 ]
-```
-
-#
-### NEW UPTADE (0.1.0)
-We have new method called `getAllFilesInstant` and `getDataFile`, For the code heres is sample:
-
-```js
-const aio = require("aio-get-all-files");
-
-(async () => {
-    const data = await aio.getAllFilesInstant("PATH", {
-        ext: ".FILE_EXTENSION",
-        sync: true, // You can not set it or set it as function, example: `(file) => console.log('file')`
-        allFiles: true, // For get all files like `getAllFilesSync`
-        fileType: "foldersOnly" // Filter of the object (file/folder) you get.
-    }); // return `Promise<Array<String>>|null`
-
-    console.log(await aio.getDataFile(data[0])); // `data[0]` is a String, also you can change it to Path or String
-})();
 ```
